@@ -1,13 +1,13 @@
 # API Commom
 
-### Versions 
+### Versions et révisions
 1.0 → Base (squelette API REST) Login + Register<br>
 1.1 → DOI + Mail<br>
 1.2 → Summarize + Simplify<br>
 
 
 
-# Guide des API REST avec Flask
+## Guide des API Common REST avec Flask
 
 ## Introduction aux API REST
 
@@ -37,27 +37,27 @@ Le diagramme ci-dessous montre comment la route `/common/api/v1/connexion-des-ut
 ![img_2.png](img_2.png)
 ### Envoi d'Email
 
-Le diagramme ci-dessous montre comment la route `/common/api/v1/envoi-d'email` fonctionne.
+Le diagramme ci-dessous montre comment la route `/common/api/v1/send-email` fonctionne.
 
 ![img_3.png](img_3.png)
 ### Création de DOI
 
-Le diagramme ci-dessous montre comment la route `/common/api/v1/création-de-doi` fonctionne.
+Le diagramme ci-dessous montre comment la route `/common/api/v1/doi` fonctionne.
 
 ![img_4.png](img_4.png)
 ### Récupération d'un DOI
 
-Le diagramme ci-dessous montre comment la route `/common/api/v1/récupération-d'un-doi` fonctionne.
+Le diagramme ci-dessous montre comment la route `/common/api/v1/doi/get/{doi}` fonctionne.
 
 ![img_5.png](img_5.png)
 ### Résumé de Texte
 
-Le diagramme ci-dessous montre comment la route `/common/api/v1/résumé-de-texte` fonctionne.
+Le diagramme ci-dessous montre comment la route `/common/api/v1/summarize` fonctionne.
 
 ![img_7.png](img_7.png)
 ### Simplification de Texte
 
-Le diagramme ci-dessous montre comment la route `/common/api/v1/simplification-de-texte` fonctionne.
+Le diagramme ci-dessous montre comment la route `/common/api/v1/simplify` fonctionne.
 
 ![img_6.png](img_6.png)
 ## Fonctionnalités Spécifiques
@@ -113,10 +113,12 @@ Voici comment vous pouvez tester les différentes routes API en utilisant `curl`
 
 - **Résumé d'un Texte** :
   ```bash
-  curl -X POST http://localhost:5000/common/api/v1/summarize \
+    curl -X POST http://localhost:5000/common/api/v1/summarize \
     -H "Authorization: Bearer <your_token>" \
     -H "Content-Type: application/json" \
     -d '{
       "text": "Les technologies de traitement automatique du langage naturel (NLP) ont considérablement évolué, offrant des solutions sophistiquées pour transformer de longs textes en résumés concis. Parmi les leaders dans ce domaine, les API d'OpenAI, Hugging Face et Google Cloud se distinguent par leurs capacités et leurs fonctionnalités uniques. Voici un aperçu détaillé des avantages de chaque service et comment choisir celui qui convient le mieux à vos besoins."
     }'
+  
+
 
